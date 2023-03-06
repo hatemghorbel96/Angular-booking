@@ -1,0 +1,32 @@
+<app-admin-menu></app-admin-menu>
+<div class="page-content">
+<main>
+
+   
+    <section class="pt-0">
+        <div class="container">
+            <table class="table">
+                <tr>
+                <th>from to</th>
+                <th>class type</th>
+                <th>stops</th>
+                <th>btn</th>
+            </tr>
+            <tr *ngFor="let v of vols">
+               <td >
+                {{v.volFrom}}-{{v.volTo}}
+               </td> 
+               <td >
+                {{v.classtype}}
+               </td> 
+               <td >
+                {{v.stops}}
+               </td> 
+               <td>
+                <a  class="btn btn-outline-success" [routerLink]="['/updatevol',v.idVol]">Modifier</a>
+               </td>
+            </tr>
+            </table>
+        </div>
+    </section>
+        </main>

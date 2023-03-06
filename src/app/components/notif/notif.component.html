@@ -1,0 +1,89 @@
+<li class="nav-item dropdown me-3" *ngIf="authService.isloggedIn">
+    <!-- Notification button -->
+    <a class="nav-notification btn btn-light p-0 mb-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+        <i class="bi bi-bell fa-fw"></i>
+    </a>
+    <!-- Notification dote -->
+    <!-- <span class="notif-badge animation-blink" *ngIf="authService.isAdmin() && notifnotreaded==0">{{notifnotreaded}}</span> -->
+    
+    <!--Admin-->
+    <span class=" position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success" *ngIf="authService.isAdmin() && notifnotreaded==0">{{notifnotreaded}}</span>
+    <span class="animation-blink position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" *ngIf="authService.isAdmin() && notifnotreaded!=0">{{notifnotreaded}}</span>
+    <!--User-->
+   <!--  <span class=" position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success" *ngIf="!authService.isAdmin() && notifnotreadedUser==0">{{notifnotreadedUser}}</span> -->
+    <span class="animation-blink position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" *ngIf="!authService.isAdmin() && notifnotreadedUser!=0">{{notifnotreadedUser}}</span>
+  
+    <!-- Notification dropdown menu START -->
+    <div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md shadow-lg p-0">
+        <div class="card bg-transparent">
+            <!-- Card header -->
+            <div class="card-header bg-transparent d-flex justify-content-between align-items-center border-bottom">
+                <h6 class="m-0" *ngIf="!authService.isAdmin()">Notifications <span class="badge bg-danger bg-opacity-10 text-danger ms-2">{{notifsUser?.length}} new</span></h6>
+                <h6 class="m-0" *ngIf="authService.isAdmin()">Notifications <span class="badge bg-danger bg-opacity-10 text-danger ms-2" >{{notifs?.length}} new</span></h6>
+                <a class="small" href="#">Clear all</a>
+            </div>
+
+            <!-- Card body START -->
+            <div class="card-body p-0">
+                <ul class="list-group list-group-flush list-unstyled p-2">
+                    <!-- Notification item -->
+                    <li *ngFor="let n of notifsUser">
+                        
+                         <div class="notif-unread" *ngIf="n.readed==0;else red">
+
+                                <a routerLink="/detailshotel/{{n.hotId}}" (click)="markshowed(n.idNotif)" class="list-group-item list-group-item-action rounded  border-0 mb-1 p-3" *ngIf="n.admin==1">
+                                    <h6 class="mb-2">New! Replay on {{n.hotname}} 🛎️</h6>
+                                    <div class="mb-0 small">Admin replayed  on your review of {{n.hotname}}</div>
+                                    <span>{{n.dateCreation | dateAsAgo }}</span>
+                                    <p *ngFor="let r of n.replays">{{r.content}}</p>
+                                </a>
+
+                        </div>
+                        <ng-template #red>
+                            <a routerLink="/detailshotel/{{n.hotId}}" (click)="markshowed(n.idNotif)" class="list-group-item list-group-item-action rounded  border-0 mb-1 p-3" *ngIf="n.admin==1">
+                                <h6 class="mb-2">New! Replay on {{n.hotname}} 🛎️</h6>
+                                <div class="mb-0 small">Admin replayed  on your review of {{n.hotname}}</div>
+                                <span>{{n.dateCreation | dateAsAgo }}</span>
+                                <p *ngFor="let r of n.replays">{{r.content}}</p>
+                            </a>
+                        </ng-template>
+                        
+                    </li>
+
+                    <li *ngFor="let n of notifs">
+
+                        <div class="notif-unread" *ngIf="n.readed==0;else red;">
+
+                           
+                              
+
+                               <a routerLink="/allreview" (click)="markshowed(n.idNotif)" class="list-group-item list-group-item-action rounded  border-0 mb-1 p-3" *ngIf="n.admin==0">
+                                   <h6 class="mb-2">New! review on {{n.hotname}} 🏨</h6>
+                                   <p class="mb-0 small">{{n.nameuser}} make a review on {{n.hotname}}</p>
+                                   <span>{{n.dateCreation | dateAsAgo }}</span>
+                               </a>
+
+                       </div>
+                       <ng-template #red>
+                        <a routerLink="/allreview" (click)="markshowed(n.idNotif)" class="list-group-item list-group-item-action rounded  border-0 mb-1 p-3" *ngIf="n.admin==0">
+                            <h6 class="mb-2">New! review on {{n.hotname}} 🏨</h6>
+                            <p class="mb-0 small">{{n.nameuser}} make a review on {{n.hotname}}</p>
+                            <span>{{n.dateCreation | dateAsAgo }}</span>
+                        </a>
+                       </ng-template>
+                       
+                   </li>
+                    <!-- Notification item -->
+                   
+                </ul>
+            </div>
+            <!-- Card body END -->
+
+            <!-- Card footer -->
+            <div class="card-footer bg-transparent text-center border-top">
+                <a href="#" class="btn btn-sm btn-link mb-0 p-0">See all</a>
+            </div>
+        </div>
+    </div>
+    <!-- Notification dropdown menu END -->
+</li>

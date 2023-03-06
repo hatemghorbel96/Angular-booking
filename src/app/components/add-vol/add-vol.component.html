@@ -1,0 +1,148 @@
+<app-admin-menu></app-admin-menu>
+<div class="page-content">
+<section class="ps-lg-4 pe-lg-3 pt-4">
+    <div class="px-3 pt-2">
+
+    <div>
+        <h2>add vol :</h2>
+    </div>
+   
+  
+        <form>
+            <div class="col-sm-2 col-md-2 col-lg-12">
+                <label hidden>ID Produit</label>
+                <input hidden type="text" [(ngModel)]="newAVol.idVol" name="idVol" class="form-control">
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-12">
+                <label>volFrom</label>
+                <input type="text" [(ngModel)]="newAVol.volFrom" name="volFrom" class="form-control">
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-12">
+                <label>volTo</label>
+                <input type="text" [(ngModel)]="newAVol.volTo" name="volTo" class="form-control">
+            </div>
+
+           
+            <label>classtype</label>
+            <select class="form-control form-control" id="newAVol.stops" [(ngModel)]="newAVol.classtype" name="newAVol.classtype">
+                <option [value]="'Economy'" selected>Economy</option>
+                <option [value]="'Premium Economy '" selected>Premium Economy  </option>
+                <option [value]="'Business'" selected>Business  </option>
+                <option [value]="'First Class'" selected>First Class  </option>
+            </select>
+          
+          
+
+              <div class="col-sm-4 col-md-4 col-lg-12">
+                <label>dep</label>
+                <input type="datetime-local" [(ngModel)]="newAVol.dep" name="dep" class="form-control">
+            </div>  
+            <div class="col-sm-4 col-md-4 col-lg-12">
+                <label>fin</label>
+                <input type="datetime-local" [(ngModel)]="newAVol.fin" name="fin" class="form-control">
+            </div>  
+            <div class="col-sm-4 col-md-4 col-lg-12">
+                <label>retour</label>
+                <input type="datetime-local" [(ngModel)]="newAVol.retour" name="retour" class="form-control">
+            </div>  
+            <div class="col-sm-4 col-md-4 col-lg-12">
+                <label>retour home</label>
+                <input type="datetime-local" [(ngModel)]="newAVol.retourhome" name="retourhome" class="form-control">
+            </div>  
+
+            <div class="col-sm-4 col-md-4 col-lg-12">
+                <label>airline</label>
+                <ng-select 
+                class="form-control form-control" id="idairline" name="idairline" [(ngModel)]="newIdAirline">
+
+                    <ng-option *ngFor="let cat of airlines" [value]="cat.idairline">
+                        {{cat.nomAirline}} <img class="card-img-top img-responsive"
+                            src="{{this.airlineService.host+'/booking/airline/imageAirline/'+cat.idairline}}"
+                            style="width:50px; height:50px;" alt="">
+            
+                    </ng-option>
+                </ng-select>
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-12">
+                <label class="bg-danger">tour (optionnel) </label>
+                <select class="form-control form-control" id="idTour" name="idTour" [(ngModel)]="newIdTour">
+                    <option *ngFor="let t of tours" [value]="t.idTour">
+                        {{t.tourname}}       
+                    </option>
+                </select>
+            </div>
+
+                <div class="col-sm-4 col-md-4 col-lg-12">
+                    <label>nbp</label>
+                    <input type="text" [(ngModel)]="newAVol.nbp" name="nbp" class="form-control">
+                </div>  
+
+                <div class="col-sm-4 col-md-4 col-lg-12">
+                    <label>nbr</label>
+                    <input type="text" [(ngModel)]="newAVol.nbr" name="nbr" class="form-control">
+                </div>  
+
+                
+                <label for="">Stops</label>
+                <select class="form-control form-control" id="newAVol.stops" [(ngModel)]="newAVol.stops" name="newAVol.stops">
+                    <option [value]="'Direct'" selected>Direct</option>
+                    <option [value]="'One Stop '" selected>One Stop  </option>
+                    <option [value]="'Two Stops'" selected>Two Stops  </option>
+                   
+                </select>
+
+                <label for="">Refundable</label>
+                <select class="form-control form-control" id="newAVol.refundable" [(ngModel)]="newAVol.refundable" name="newAVol.refundable">
+                    <option [value]="'1'" selected>yes</option>
+                    <option [value]="'0 '" selected>No  </option>
+                    
+                   
+                </select>
+
+                <div class="col-sm-4 col-md-4 col-lg-12">
+                    <label>montant</label>
+                    <input type="text" [(ngModel)]="newAVol.montant" name="montant" class="form-control">
+                </div>  
+
+                
+
+                <div class="col-sm-2 col-md-2 col-lg-12 text-center">
+                    <img [src]="imgURL" height="100" width="200" *ngIf="imgURL">
+                  </div>
+    
+                  <div class="mb-md-5 mb-4 pb-md-0 pb-2">
+                    <h2 class="h5 mb-2 pb-1">Upload image</h2>
+                    <p class="mb-4 fs-sm">File types supported: PNG, JPG, GIF, WEBP, MP3 or MP4. Max size: 100mb.</p>
+                    <!-- display images-->
+                    
+                     <!-- Drag and drop file upload-->
+                    <div class="file-drop-area" >
+                        
+                      <a (click)="selectFile.click()" class="file-drop-icon ci-cloud-upload">
+                        
+                      </a><span class="file-drop-message">Drag and drop here to upload</span>
+                    </div>
+                    <!--   <input class="file-drop-input" type="file" multiple value="select" #selectFile  (change)="onFileSelected($event)"> -->
+                    <input class="file-drop-input" type="file" value="select" #selectFile  (change)="selectImage($event)">
+                    
+                  </div>
+                       
+                   
+               
+
+            <div class="mt-3">
+                <button type="submit" (click)="addVol()" class="btn btn-success">Ajouter</button>
+
+               
+
+            </div>
+        </form>
+        
+    </div>
+     
+   
+
+
+
+</section>

@@ -1,0 +1,639 @@
+
+
+<main>
+	
+ 
+    <section>
+        <div class="container position-relative" data-sticky-container>
+        
+                <!-- Step Buttons END -->
+                <div class="bs-stepper-content p-0 pt-4">
+            <div class="row g-4">
+                
+                <div class="col-xl-9">
+                        
+                    <div class="vstack gap-4">
+                        
+                       
+                       <!--  <div class="d-flex align-items-center">
+                        
+                            <h1 class="display-4 mb-0"><i class="fa-solid fa-plane rtl-flip"></i></h1>
+    
+                        
+                            <div class="ms-3">
+                              
+                                <ul class="list-inline mb-2">
+                                    <li class="list-inline-item me-2">
+                                        <h3 class="mb-0">{{vol.volFrom}}</h3>
+                                    </li>
+                                    <li class="list-inline-item me-2">
+                                        <h3 class="mb-0"><i class="bi bi-arrow-right"></i></h3>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <h3 class="mb-0">{{vol.volTo}}</h3>
+                                    </li>
+                                </ul>
+    
+                            
+                                <ul class="nav nav-divider h6 fw-normal text-body mb-0">
+                                    <li class="nav-item">{{vol.dep | date:('d/mm/Y')}}</li>
+                                    <li class="nav-item">{{vol.stops}}</li>
+                                    <li class="nav-item">05h 25m</li>
+                                </ul>
+                            </div>
+                           
+                        </div> -->
+                    
+                        <div class="card border">
+                          
+                            <div class="card-header d-flex justify-content-between pb-0">
+                                <h6 class="fw-normal mb-0"><span class="text-body">Travel Class:</span> {{vol.classtype}}</h6>
+                                <a href="#" class="btn btn-link text-decoration-underline p-0 mb-0" data-bs-toggle="modal" data-bs-target="#baggageFare">
+                                    <i class="bi bi-eye-fill me-1"></i>Baggage & Fare Rules
+                                </a>
+                            </div>
+    
+                           
+                            <div class="card-body p-4">
+                              
+                                <div class="row g-4">
+                                  
+                                    <div class="col-md-3">
+                                       
+                                        <img src = "{{this.airlineService.host+'/booking/airline/imageAirline/'+vol.airline.idairline}}" class="w-80px mb-3" alt="">
+                                      
+                                        <h6 class="fw-normal mb-0">{{vol.airline.nomAirline}}</h6>
+                                        <h6 class="fw-normal mb-0">PA - 5620</h6>
+                                    </div>
+    
+                                  
+                                    <div class="col-sm-4 col-md-3">
+                                        <!-- Title -->
+                                        <h4>{{vol.volFrom}}</h4>
+                                        <h6>{{vol.dep | date:('hh:mm')}}</h6>
+                                        <!-- Address -->
+                                        <p class="mb-2">{{vol.dep | date:('dd/MM/yyyy')}}</p>
+                                        <p class="mb-2">Chhatrapati Shivaji International Airport</p>
+                                        <p class="mb-0">Terminal - 2, Gate - 25</p>
+                                    </div>
+    
+                                    <!-- Time -->
+                                    <div class="col-sm-4 col-md-3 text-center my-sm-auto">
+                                        <!-- Time -->
+                                        <h5>9hr 50min</h5>
+    
+                                        <div class="position-relative my-4">
+                                            <!-- Line -->
+                                            <hr class="bg-primary opacity-5 position-relative">
+                                            <!-- Icon -->
+                                            <div class="icon-md bg-primary text-white rounded-circle position-absolute top-50 start-50 translate-middle">
+                                                <i class="fa-solid fa-fw fa-plane rtl-flip"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Airport detail -->
+                                    <div class="col-sm-4 col-md-3">
+                                        <!-- Title -->
+                                        <h4>{{vol.volTo}}</h4>
+                                        <h6>{{vol.fin | date:('hh:mm')}}</h6>
+                                        <!-- Address -->
+                                        <p class="mb-2">{{vol.fin | date:('dd/MM/yyyy')}}</p>
+                                        <p class="mb-2">Ch. De Gaulle, Paris, France</p>
+                                        <p class="mb-0">Terminal - 2E, Gate - 3</p>
+                                    </div>
+                                </div>
+                                <!-- Ticket item END -->
+                                <div *ngIf="vol.retour">
+                                <!-- Divider -->
+                                <div class="bg-light rounded-2 text-center text-danger p-2 my-4">
+                                    Change of planes: 3h 15m Layover in France
+                                </div>
+    
+                                <!-- Ticket item START -->
+                                <div class="row g-4">
+                                    <!-- Air line name -->
+                                    <div class="col-md-3">
+                                        <!-- Image -->
+                                        <img src = "{{this.airlineService.host+'/booking/airline/imageAirline/'+vol.airline.idairline}}" class="w-80px mb-3" alt="">
+                                        <!-- Title -->
+                                        <h6 class="fw-normal mb-0">{{vol.airline.nomAirline}}</h6>
+                                        <h6 class="fw-normal mb-0"> PA-645</h6>
+                                    </div>
+    
+                                    <!-- Airport detail -->
+                                    <div class="col-sm-4 col-md-3">
+                                        <!-- Title -->
+                                        <h4>{{vol.volFrom}}</h4>
+                                        <h6>{{vol.retourhome | date:('hh:mm')}}</h6>
+                                        <!-- Address -->
+                                        <p class="mb-2">{{vol.retourhome | date:('dd/MM/yyyy')}}</p>
+                                        <p class="mb-2">Ch. De Gaulle, Paris, France</p>
+                                        <p class="mb-0">Terminal - 2E, Gate - 3</p>
+                                    </div>
+    
+                                    <!-- Time -->
+                                    <div class="col-sm-4 col-md-3 text-center my-sm-auto">
+                                        <!-- Time -->
+                                        <h5>5hr 50min</h5>
+    
+                                        <div class="position-relative my-4">
+                                            <!-- Line -->
+                                            <hr class="bg-primary opacity-5 position-relative">
+                                            <!-- Icon -->
+                                            <div class="icon-md bg-primary text-white rounded-circle position-absolute top-50 start-50 translate-middle">
+                                                <i class="fa-solid fa-fw fa-plane rtl-flip fa-rotate-180"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Airport detail -->
+                                    <div class="col-sm-4 col-md-3">
+                                        <!-- Title -->
+                                        <h4>{{vol.volTo}}</h4>
+                                        <h6>{{vol.retour | date:('hh:mm')}}</h6>
+                                        <!-- Address -->
+                                        <p class="mb-2">{{vol.retour | date:('dd/MM/yyyy')}}</p>
+                                        <p class="mb-2">John F Kennedy Intl-NY</p>
+                                        <p class="mb-0">Terminal - 4, Gate - 08</p>
+                                    </div>
+                                </div>
+                                <!-- Ticket item END -->
+                            </div>  
+                            <!-- Card body END -->
+                        </div>
+                    </div>
+                    <form [formGroup]="myReactiveForm" (ngSubmit)="addreseravrtion(myReactiveForm)">
+                    <div class="card border">
+                        <div class="card-header border-bottom px-4">
+                            <h3 class="card-title mb-0">nb places</h3>
+                        </div>
+                        <div class="card-body py-4">
+                            <input type="number" formControlName="nb" class="form-control" max="{{vol.nbr}}" min="{{members.length}}" [(ngModel)]="newReservation.nb" > 
+                           
+                            <input hidden  type="number" formControlName="extra" class="form-control" ngModel="{{val}}"> 
+                            <input  hidden  type="number" formControlName="couponon" class="form-control" ngModel="{{couponval}}"> 
+                            <input hidden  type="number" formControlName="montantExtraRoom" class="form-control" ngModel="{{extraRoom}}"> 
+                            <input hidden  type="number" formControlName="nbrooms" class="form-control" ngModel="{{nbchabre}}"> 
+                        </div>
+
+                        
+                      
+
+                        <div class="card-body py-4">
+                        <button (click)="addMember()" class="btn btn-success" type="button" [disabled]="newReservation.nb<=members.length">add persone</button>
+                            &nbsp;
+                        <button (click)="removeMember()" class="btn btn-success" type="button">remove persone</button>
+                        </div>
+
+
+                         <div formArrayName="persones" > 
+                         <div  class=" py-4" *ngFor="let member of members?.controls; let i=index">
+                            <div [formGroupName]="i">
+                                <div class="accordion accordion-icon accordion-bg-light" id="accordionExample2">
+                                    <!-- Item -->
+                                    <div class="accordion-item mb-3">
+                            <div class="accordion-body mt-3" >
+                                
+                                <!-- Form START -->
+                                <div class="row g-4">
+                                    <!-- Select item -->
+                                    <div class="col-md-3">
+                                        <label class="form-label">Title</label>
+                                        <input type="text" class="form-control" placeholder="Last name" formControlName="titre">
+                                      <!--   <select class="form-control js-choice" formControlName="titre">
+                                            <option>Mr</option>
+                                            <option>Mrs</option>
+                                        </select> -->
+                                    </div>
+
+                                    <!-- Input item -->
+                                    <div class="col-md-9">
+                                        <label class="form-label">Full name</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="First name" formControlName="firstname">
+                                            <input type="text" class="form-control" placeholder="Last name" formControlName="lastname">
+                                        </div>
+                                    </div>
+
+                                    <!-- Select group -->
+                                    <div class="col-md-6">
+                                        <label class="form-label">Date Of Birth</label>
+                                        <div class="row g-0 ">
+                                            <div class="col-12">
+                                            
+                                        <input type="text" class="form-control flatpickr" placeholder="Date of birth" data-date-format="d M y" formControlName="datebirth"> 
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Select item -->
+                                    <div class="col-md-6">
+                                        <label class="form-label">Nationality</label>
+                                        <input type="text" class="form-control" placeholder="Last name" formControlName="nationality">
+                                        <!-- <select class="form-control js-choice" formControlName="datebirth">
+                                            <option value="">Select Nationality</option>
+                                            <option>Indian</option>
+                                            <option>Mali</option>
+                                            <option>Japan</option>
+                                            <option>Jordan</option>
+                                        </select> -->
+                                    </div>
+
+                                    <!-- Input item -->
+                                    <div class="col-md-6">
+                                        <label class="form-label">Passport Number</label>
+                                        <input type="text" class="form-control" placeholder="Enter passport number" formControlName="passport">
+                                    </div>
+
+                                    <!-- Select item -->
+                                    <div class="col-md-6">
+                                        <label class="form-label">Passport Issuing Country</label>
+                                        <input type="text" class="form-control" placeholder="Enter passport number" formControlName="country">
+                                      <!--   <select class="form-control js-choice">
+                                            <option value="">Select Country</option>
+                                            <option>India</option>
+                                            <option>Canada</option>
+                                            <option>Japan</option>
+                                            <option>China</option>
+                                        </select> -->
+                                    </div>
+
+                                    <!-- Select group -->
+                                    <div class="col-md-6">
+                                        <label class="form-label">Passport Expiry</label>
+                                        <input type="text" class="form-control flatpickr" placeholder="Enter passport date" data-date-format="d M y" formControlName="passworddateout">
+                                    </div>
+                                </div>
+                                <!-- Form END -->
+
+                            </div>
+                            </div>
+                        </div>
+                    </div> </div>
+                </div>
+
+
+                        <div class="card-body py-4">
+                            <button class="btn btn-success" [disabled]="members.length != newReservation.nb" >reserve</button> 
+                        </div>
+                    </div>
+                    </form>
+                        <!-- Ticket END -->
+    
+                       
+    
+                        <!-- Booking form START -->
+                       
+                        <!-- Booking form END -->
+                  
+                </div>
+                
+               
+                <div class="card-body p-0 mt-2">
+                    <div class="row g-2 g-sm-4 align-items-center">
+                        <!-- Card image -->
+                        <div class="col-sm-4 col-xl-3">
+                            <div class="bg-light rounded-3 px-4 py-5">
+                                <img src="assets/images/category/cab/seadan.svg" alt="">
+                            </div>
+                        </div>
+                
+                        <!-- Card title and rating -->
+                        <div class="col-sm-8 col-xl-9">
+                            <h5 class="card-title mb-2 text-danger" *ngIf="carextra==2">you dont have a Private Transfers</h5>
+                            <h5 class="card-title mb-2 text-success" *ngIf="carextra==3 || carextra==10">Private Transfers (1 car)</h5>
+                            <h5 class="card-title mb-2 text-success" *ngIf="carextra==1">Private Transfers (2 cars)</h5>
+                            <h6 class="mb-2">Camry, Accord</h6>
+                            <!-- Nav divider -->
+                            <ul class="nav nav-divider mb-2">
+                                <li class="nav-item">SEDAN</li>
+                                <li class="nav-item">AC</li>
+                                <li class="nav-item">4 Seats</li>
+                                <li class="nav-item">2 luggage</li>
+                                <li class="nav-item">First Aid</li>
+                            </ul>
+                                <h6 *ngIf="carextra==2"> -10 DT </h6>
+                                <h6 *ngIf="carextra==1"> +10 DT</h6>
+                                <h6 *ngIf="carextra==3 || carextra==10"> +0 DT</h6>
+                                <h6></h6>
+                            <!-- Buttons -->
+                          
+                            <button  class="btn btn-sm btn-primary-soft mb-0" (click)="backdefault()" *ngIf="carextra==2">add default car (+10 DT)</button> &nbsp;
+                            <button  class="btn btn-sm btn-primary-soft mb-0" (click)="addextra()" *ngIf="carextra==3 || carextra == 10 ">add extra car (+10 DT)</button> &nbsp;
+                            <button  class="btn btn-sm btn-primary-soft mb-0" (click)="backdefault()" *ngIf="carextra==1">you have an extra car (+10 DT)</button> &nbsp;
+                            <button  class="btn btn-sm btn-danger-soft mb-0" (click)="Removecar()" *ngIf="carextra!=2">Remove (- 10) </button>
+                        </div>
+                    </div> <!-- Row END -->
+                </div>	
+
+
+                <div class="card bg-transparent p-0 mt-3">
+                    <!-- Card header -->
+                    <div class="card-header bg-transparent p-0">
+                        <span class="text-body"><i class="fa-solid fa-check-circle me-2"></i>Check-In to hotel</span>
+                    </div>
+
+                    <!-- Card body -->
+                    <div class="card-body p-0 mt-2">
+                        <div class="row g-2 g-sm-4">
+                            <!-- Card image -->
+                            <ng-container *ngFor="let h of hotels">
+                            
+                           
+                                <div  *ngIf="h.idHotel == vol.tour.hotel.idHotel" class="col-sm-4" >
+                                <img [src]="h.hotelImages[0].url" class="card-img" alt="Card image" style="height: 150px;">
+                                </div>
+                            </ng-container>
+                            <!-- Card title and rating -->
+                            <div class="col-sm-8">
+                                <!-- Badge -->
+                                <div class="d-flex justify-content-between mb-2">
+                                  
+                                    <div >
+                                        <p>Select number of rooms</p>
+                                    <button class="btn btn-sm btn-round btn-danger mb-0 " (click)="one()">1 Room</button>
+                                    &nbsp;
+                                    <button class="btn btn-sm btn-round btn-danger mb-0" (click)="two()">2 Rooms</button>
+                                    </div>
+                                </div>
+
+                                <!-- Title -->
+                                <h5 class="card-title mb-1"><a href="hotel-detail.html">{{vol.tour.hotel.namehotel}}</a></h5>
+                                <span>2.9km from the airport</span>
+                                
+                                <!-- List -->
+                                <ul class="list-group list-group-borderless mb-0 mt-2 small">
+                                    <li class="list-group-item d-flex p-0">
+                                        <i class="far fa-calendar-alt me-2"></i>Tue, 5 Jul 2022 - Sat 9 Jul 2022
+                                    </li>
+                                    <li class="list-group-item d-flex text-info p-0" *ngIf="nbchabre==1">
+                                        <i class="bi bi-patch-check-fill me-2"></i>You have one chambre (+0 DT)
+                                    </li>
+                                    <li class="list-group-item d-flex text-success p-0"*ngIf="nbchabre==2">
+                                        <i class="bi bi-patch-check-fill me-2"></i>You have two chambre (+{{(vol.tour.tourMontant)/1.5 | currency : 'DT'}})
+                                    </li>
+                                </ul>
+
+                               
+
+                            </div>
+                        </div> <!-- Row END -->
+                    </div>	
+                </div>
+
+
+
+                <div class="card shadow rounded-2 overflow-hidden mt-5" *ngIf="vol.tour?.idTour">
+                    <div class="row g-0">
+                        <!-- Image -->
+                        <div class="col-sm-6 col-md-4">
+                            <div *ngFor="let tourim of tours">
+                                <div *ngIf="tourim.idTour==vol.tour.idTour">
+                             <img [src]="tourim.tourImages[0].url" class="" alt="">
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Body START -->
+                        <div class="col-sm-6 col-md-8">
+                            <div class="card-body p-3">
+                                <!-- Title -->
+                                <h5 class="card-title mb-1"><a routerLink="/tourdetails/{{vol.tour?.idTour}}">{{vol.tour.tourname}}</a></h5>
+                                <!-- Rating star -->
+                                <ul class="list-inline mb-0">
+                                    <li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+                                    <li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+                                    <li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+                                    <li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+                                    <li class="list-inline-item me-0 small"><i class="fa-solid fa-star-half-alt text-warning"></i></li>
+                                </ul>
+
+                                <!-- List -->
+                                <ul class="nav nav-divider small mb-0 mt-2">
+                                    <li class="nav-item mb-1"><i class="far fa-calendar-alt me-2"></i>April 12-17</li>
+                                    <li class="nav-item mb-1"><i class="fa-solid fa-bed me-2"></i>1 Room</li>
+                                    <li class="nav-item mb-1"><i class="bi bi-people-fill me-2"></i>2 Guests</li>
+                                    <li class="nav-item mb-1"><i class="bi bi-geo-alt-fill me-2"></i>{{vol.tour.hotel.city}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Card body END -->
+                    </div>
+                </div>
+
+                <div class="card border mt-5">
+                    <!-- Card header -->
+                    <div class="card-header border-bottom d-flex justify-content-between">
+                        <!-- Title -->
+                        <h5 class="mb-0">Transfer Details  </h5>
+                        <a routerLink="/tourdetails/{{vol.tour?.idTour}}" class="btn btn-link p-0 mb-0 text-primary-hover text-reset text-decoration-underline">View details</a>
+                    </div>
+
+                    <!-- Card body START -->
+                    <div class="card-body">
+                        <div class="d-flex gap-1 justify-content-between flex-wrap">
+                            <!-- Title -->
+                            <h6 class="mb-0">Private Transfer</h6>
+                            <!-- Info -->
+
+                            <p class="mb-0" *ngIf="carextra==3">Vehicle type: <span class="h6 fw-light" >Sedan - AC</span></p>
+                            <p class="mb-0" *ngIf="carextra==2">You dont have a private transfer</p>
+                            <p class="mb-0" *ngIf="carextra==1">Vehicle type: <span class="h6 fw-light" >Two Vehicles Sedan - AC</span></p>
+                            <!-- Date -->
+                            <h6 class="mb-0 fw-normal">{{vol.fin | date:('dd/MM/yyyy')}}</h6>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Card body END -->
+                </div>	
+
+            </div>
+                <!-- Left Content END -->
+               
+                <!-- Right content START -->
+                <aside class="col-xl-3">
+                    <div data-sticky data-margin-top="80" data-sticky-for="1199">
+                        <div class="row g-4">
+                            <!-- Fare summary START -->
+                            <div class="col-md-6 col-xl-12">
+                                <div class="card bg-light rounded-2">
+                                    <!-- card header -->
+                                    <div class="card-header border-bottom bg-light">
+                                        <h5 class="card-title mb-0">Fare Summary</h5>
+                                    </div>
+        
+                                    <!-- Card body -->
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-borderless">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <span class="h6 fw-normal mb-0">Base Fare
+                                                    <a href="#" tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-content="COVID-19 test required Vaccinated travelers can visit">
+                                                        <i class="bi bi-info-circle"></i>
+                                                    </a>
+                                                </span>
+                                                <span class="fs-5">{{vol.montant}} DT</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <span class="h6 fw-normal mb-0">sup Total</span>
+                                                <span class="fs-6 text-success" *ngIf="newReservation.nb">+{{(newReservation.nb * vol.montant)-vol.montant}} DT</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <span class="h6 fw-normal mb-0">Nb pers</span>
+                                                <span class="fs-5">{{newReservation.nb}}</span>
+                                            </li>
+                                            <a routerLink="/tourdetails/{{vol.tour?.idTour}}">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center" *ngIf="carextra==1">
+                                                <span class="h6 fw-normal mb-0 text-info">+ Extra car</span>
+                                                <br>
+                                                <span class="fs-10">+ 10 DT</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center" *ngIf="carextra==3">
+                                                <span class="h6 fw-normal mb-0 text-info">0 Extra </span>
+                                                <br>
+                                                <span class="fs-10">+ 0 DT</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center" *ngIf="carextra==2">
+                                                <span class="h6 fw-normal mb-0 text-info">No cars </span>
+                                                <br>
+                                                <span class="fs-10">- 10 DT</span>
+                                            </li>
+                                            </a>
+                                        </ul>
+                                    </div>
+        
+                                    <!-- Card footer -->
+                                    <div class="card-footer border-top bg-light">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="h5 fw-normal mb-0">Total</span>
+
+                                            <!-- default + nbpers -->
+                                            <span class="h5 fw-normal mb-0" *ngIf="newReservation.nb && carextra==''">{{newReservation.nb * vol.montant}}DT</span>
+                                             <!-- single default  -->
+                                            <span class="h5 fw-normal mb-0" *ngIf="!newReservation.nb && carextra==''">{{ vol.montant}}DTt</span>
+
+                                             <!-- default + nbpers + coupon -->
+                                             <span class="h5 fw-normal mb-0" *ngIf="newReservation.nb && carextra=='' && thiscop?.reduction!=null">{{(newReservation.nb * vol.montant) - thiscop.reduction}}DT</span>
+                                             <!-- single default + coupon -->
+                                            <span class="h5 fw-normal mb-0" *ngIf="!newReservation.nb && carextra=='' && thiscop?.reduction!=null">{{ vol.montant - thiscop.reduction}}DT</span>
+
+                                            
+
+                                             <!-- extra + nbpers  -->
+                                             <span class="h5 fw-normal mb-0" *ngIf="newReservation.nb && carextra==1">{{(newReservation.nb * vol.montant) + 10}}DT</span> 
+                                             <!-- extra + single  -->                     
+                                            <span class="h5 fw-normal mb-0" *ngIf="!newReservation.nb && carextra==1">{{ vol.montant + 10}}DT</span>
+
+                                             <!-- extra + nbpers + coupon -->
+                                             <span class="h5 fw-normal mb-0" *ngIf="newReservation.nb && carextra==1 && thiscop?.reduction!=null">{{((newReservation.nb * vol.montant) + 10) - thiscop.reduction}}DT</span> 
+                                             <!-- extra + single + coupon -->                     
+                                            <span class="h5 fw-normal mb-0" *ngIf="!newReservation.nb && carextra==1 && thiscop?.reduction!=null">{{ (vol.montant + 10) - thiscop.reduction}}DT</span>
+
+                                              <!-- default + nbpers dima affiche -->
+                                            <span class="h5 fw-normal mb-0" *ngIf="newReservation.nb && carextra==3 && thiscop?.reduction==null" >{{(newReservation.nb * vol.montant) + 0}}DT</span>
+                                             <!-- single default dima affiche -->                    
+                                            <span class="h5 fw-normal mb-0" *ngIf="!newReservation.nb && carextra==3 && thiscop?.reduction==null">{{ vol.montant + 0}}DT</span>
+
+
+                                              <!-- default + nbpers barr  -->
+                                              <span class="h5 fw-normal mb-0 text-decoration-line-through text-danger" *ngIf="newReservation.nb && carextra==3 && thiscop?.reduction!=null" >{{(newReservation.nb * vol.montant) + 0}}DT  </span>
+                                              <!-- single default barr -->                    
+                                             <span class="h5 fw-normal mb-0 text-decoration-line-through text-danger" *ngIf="!newReservation.nb && carextra==3 && thiscop?.reduction!=null">{{ vol.montant + 0}}DT </span>
+
+                                              <!-- default + nbpers + coupon -->
+                                              <span class="h5 fw-normal mb-0" *ngIf="newReservation.nb && carextra==3 && thiscop?.reduction!=null">{{((newReservation.nb * vol.montant) + 0) - thiscop.reduction}}DT</span>
+                                              <!-- single default + coupon  -->                    
+                                             <span class="h5 fw-normal mb-0" *ngIf="!newReservation.nb && carextra==3 && thiscop?.reduction!=null">{{( vol.montant + 0) - thiscop.reduction}}DT</span>
+
+                                             <!-- nb pers -10 -->
+                                            <span class="h5 fw-normal mb-0" *ngIf="newReservation.nb && carextra==2">{{(newReservation.nb * vol.montant) - 10}}DT</span> 
+                                             <!-- single -10 -->                     
+                                            <span class="h5 fw-normal mb-0" *ngIf="!newReservation.nb && carextra==2">{{ vol.montant - 10}}DT</span>
+
+                                             <!-- nb pers -10 + coupon -->
+                                             <span class="h5 fw-normal mb-0" *ngIf="newReservation.nb && carextra==2 && thiscop?.reduction!=null">{{((newReservation.nb * vol.montant) - 10)- thiscop.reduction}}DT</span> 
+                                             <!-- single -10  + coupon -->                     
+                                          
+                                             <span class="h5 fw-normal mb-0" *ngIf="!newReservation.nb && carextra==2 && thiscop?.reduction!=null">{{ (vol.montant - 10)- thiscop.reduction}}DT</span>
+                                            
+                                         
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Fare summary END -->
+                            <div class="col-md-6 col-xl-12" *ngIf="nbchabre==2">
+                                <div class="card card-body bg-light">
+                                    <div class="cardt-title">
+                                        <h5>Extra room</h5> 
+                                    </div>
+                                    <!-- Input group -->
+                                    <span class="h5 fw-normal mb-0 text-success">  + {{extraRoom | currency: ' DT '}}</span>    
+                                  
+                                    
+                                </div>
+                            </div>
+                            <!-- Coupon START -->
+                            <div class="col-md-6 col-xl-12">
+                                <div class="card card-body bg-light">
+                                    <div class="cardt-title">
+                                        <h5>Offer & Discount</h5>
+                                    </div>
+                                    <!-- Input group -->
+
+                                    <div *ngIf="thiscop == null && clicked==1">
+                                        <span class="badge bg-danger">coupon invalidd</span>
+                                    </div>
+                                    <div *ngIf="thiscop == null && clicked==0">
+                                        <span class="badge bg-danger">empty code</span>
+                                    </div>
+                                   
+                                    <div *ngIf="thiscop != null">
+                                        <span class="badge bg-success">coupon valid -{{thiscop?.reduction}} DT</span>
+                                    </div>
+
+                                    <form class="input-group mt-2">
+                                        
+                                        <input class="form-control form-control" placeholder="Coupon code" #myInput >
+                                        
+                                        <button type="submit" class="btn btn-primary" (click)="checkcoup(myInput.value)"  >Apply</button>
+                                    </form>
+                                    
+                                </div>
+                            </div>
+
+                            {{thiscop?.reduction}}
+                            <!-- Coupon END -->
+    
+                            <!-- Cancel policy START -->
+                            <div class="col-md-6 col-xl-12">
+                                <div class="card card-body border p-4">
+                                    <div class="cardt-title mb-3">
+                                        <h5 class="mb-0">Cancellation & Date Change Charges</h5>
+                                    </div>
+    
+                                    <h6 class="text-danger" *ngIf="vol.refundable == 0">Non Refundable</h6>
+                                    <h6 class="text-success" *ngIf="vol.refundable == 1">Non Refundable</h6>
+                                    <p class="mb-2">The Cancellation penalty on this booking will depend on how close to the departure date you cancel your ticket. View fare rules to know more</p>
+                                    <div><a href="#" class="btn btn-link p-0 mb-0 text-decoration-underline" data-bs-toggle="modal" data-bs-target="#cancellation">
+                                        <i class="bi bi-eye-fill"></i> View Detail
+                                    </a></div>
+                                </div>
+                            </div>
+                            <!-- Cancel policy END -->
+                        </div>
+                    </div>	
+                </aside>
+                <!-- Right content END -->
+                </div>
+            </div></div>
+      
+    </section>
+    <!-- =======================
+    Main Content END -->
+    
+    </main>
+    <!-- **************** MAIN CONTENT END **************** -->

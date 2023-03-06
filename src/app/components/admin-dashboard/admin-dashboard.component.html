@@ -1,0 +1,204 @@
+<!-- Page main content START -->
+<app-admin-menu></app-admin-menu>
+<div class="page-content">
+<div class="page-content-wrapper p-xxl-4">
+	
+    <!-- Title -->
+    <div class="row">
+        <div class="col-12 mb-4 mb-sm-5">
+            <div class="d-sm-flex justify-content-between align-items-center">
+                <h1 class="h3 mb-2 mb-sm-0">Dashboard</h1>
+                <div class="d-grid"><a href="#" class="btn btn-primary-soft mb-0"><i class="bi bi-plus-lg fa-fw"></i> New Booking</a></div>				
+            </div>
+        </div>
+    </div>
+
+    <!-- Counter boxes START -->
+    <div class="row g-4 mb-5">
+        <!-- Counter item -->
+        <div class="col-md-6 col-xxl-3">
+            <div class="card card-body bg-warning bg-opacity-10 border border-warning border-opacity-25 p-4 h-100">
+                <div class="d-flex justify-content-between align-items-center">
+                    <!-- Digit -->
+                    <div>
+                        <h4 class="mb-0">{{hotels.length}}</h4>
+                        <span class="h6 fw-light mb-0">Total Hotels</span>
+                    </div>
+                    <!-- Icon -->
+                    <div class="icon-lg rounded-circle bg-warning text-white mb-0"><i class="fa-solid fa-hotel fa-fw"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Counter item -->
+        <div class="col-md-6 col-xxl-3">
+            <div class="card card-body bg-success bg-opacity-10 border border-success border-opacity-25 p-4 h-100">
+                <div class="d-flex justify-content-between align-items-center">
+                    <!-- Digit -->
+                    <div>
+                        <h4 class="mb-0">{{SumPayedReservation | currency : ' DT '}}</h4>
+                        <span class="h6 fw-light mb-0">Total Incomes</span>
+                    </div>
+                    <!-- Icon -->
+                    <div class="icon-lg rounded-circle bg-success text-white mb-0"><i class="fa-solid fa-hand-holding-dollar fa-fw"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Counter item -->
+        <div class="col-md-6 col-xxl-3">
+            <div class="card card-body bg-primary bg-opacity-10 border border-primary border-opacity-25 p-4 h-100">
+                <div class="d-flex justify-content-between align-items-center">
+                    <!-- Digit -->
+                    <div>
+                        <h4 class="mb-0">{{hotels | sum:'nbrooms'}}</h4>
+                        <span class="h6 fw-light mb-0">Total Rooms</span>
+                    </div>
+                    <!-- Icon -->
+                    <div class="icon-lg rounded-circle bg-primary text-white mb-0"><i class="fa-solid fa-bed fa-fw"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Counter item -->
+        <div class="col-md-6 col-xxl-3">
+            <div class="card card-body bg-info bg-opacity-10 border border-info border-opacity-25 p-4 h-100">
+                <div class="d-flex justify-content-between align-items-center">
+                    <!-- Digit -->
+                    <div>
+                        <h4 class="mb-0">{{reservations | sum:'nbrooms'}}</h4>
+                        <span class="h6 fw-light mb-0">Booked Room</span>
+                    </div>
+                    <!-- Icon -->
+                    <div class="icon-lg rounded-circle bg-info text-white mb-0"><i class="fa-solid fa-building-circle-check fa-fw"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Counter boxes END -->
+
+    <!-- Hotel grid START -->
+    <div class="row g-4 mb-5">
+        <!-- Title -->
+        <div class="col-12">
+            <div class="d-flex justify-content-between">
+                <h4 class="mb-0">Popular Hotels</h4>
+                <a href="#" class="btn btn-primary-soft mb-0">View All</a>
+            </div>	
+        </div>
+
+        <!-- Hotel item -->
+        <div class="col-lg-6" *ngFor="let h of hotels">
+            <div class="card shadow p-3">
+                <div class="row g-4">
+                    <!-- Card img -->
+                    <div class="col-md-3">
+                        <img [src]="h.hotelImages[0].url" class="rounded-2" alt="Card image" style="width: 100%;  height:150px">
+                    </div>
+
+                    <!-- Card body -->
+                    <div class="col-md-9">
+                        <div class="card-body position-relative d-flex flex-column p-0 h-100">
+
+                            <!-- Buttons -->
+                            <div class="list-inline-item dropdown position-absolute top-0 end-0">
+                                <!-- Share button -->
+                                <a href="#" class="btn btn-sm btn-round btn-light" role="button" id="dropdownAction1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </a>
+                                <!-- dropdown button -->
+                                <ul class="dropdown-menu dropdown-menu-end min-w-auto shadow" aria-labelledby="dropdownAction1">
+                                    <li><a class="dropdown-item small" href="#"><i class="bi bi-info-circle me-2"></i>Report</a></li>
+                                    <li><a class="dropdown-item small" href="#"><i class="bi bi-slash-circle me-2"></i>Disable</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Title -->
+                            <h5 class="card-title mb-0 me-5"><a href="hotel-detail.html">{{h.namehotel}}</a></h5>
+                            <small><i class="bi bi-geo-alt me-2"></i>{{h.city}}</small>
+
+                            <!-- Price and Button -->
+                            <div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+                                <!-- Price -->
+                                <div class="d-flex align-items-center">
+                                    <h5 class="fw-bold mb-0 me-1">{{h.pricenight | currency : ' DT '}}</h5>
+                                    <span class="mb-0 me-2">/day</span>
+                                </div>
+                                <!-- Button -->
+                                <div class="hstack gap-2 mt-3 mt-sm-0">
+                                    <a href="#" class="btn btn-sm btn-primary-soft px-2 mb-0"><i class="bi bi-pencil-square fa-fw"></i></a>    
+                                    <a href="#" class="btn btn-sm btn-danger-soft px-2 mb-0"><i class="bi bi-slash-circle fa-fw"></i></a>    
+                                </div>                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Hotel grid END -->
+    
+    <!-- Widget START -->
+    <div class="row g-4">
+        <!-- Booking Chart START -->
+        <div class="col-xxl-8">
+            <!-- Chart START -->
+            <div class="card shadow h-100">
+                <!-- Card header -->
+                <div class="card-header border-bottom">
+                    <h5 class="card-header-title">Guest Activity</h5>
+                </div>
+
+                <!-- Card body -->
+                <div class="card-body">
+                    <!-- Content -->
+                    <div class="d-flex gap-4 mb-3">
+                        <h6><span class="fw-light"><i class="bi bi-square-fill text-primary"></i> Check-in:</span> 475 Guests</h6>
+                        <h6><span class="fw-light"><i class="bi bi-square-fill text-info"></i> Check-out:</span> 157 Guests</h6>
+                    </div>
+                    <!-- Apex chart -->
+                   
+                    <div id="ChartGuesttraffic" class="mt-2"></div>
+                </div>
+            </div>
+            <!-- Chart END -->
+        </div>
+        <!-- Booking Chart END -->
+
+        <!-- Booking graph START -->
+        <div class="col-lg-6 col-xxl-4">
+            <div class="card shadow h-100">
+                <!-- Card header -->
+                <div class="card-header border-bottom">
+                    <h5 class="card-header-title">Room Availability</h5>
+                </div>
+
+                <!-- Card body START -->
+                <div class="card-body p-3">
+                    <!-- Chart -->
+                    <div class="col-sm-6 mx-auto">
+                        <div class="d-flex justify-content-center" id="ChartTrafficRooms"></div>
+                    </div>
+
+                    <!-- Content -->
+                    <ul class="list-group list-group-borderless mb-0">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span class="h6 fw-light mb-0"><i class="text-success fas fa-circle me-2"></i> Available</span>
+                            <span class="h6 fw-light mb-0">73 Rooms</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span class="h6 fw-light mb-0"><i class="text-danger fas fa-circle me-2"></i> Sold Out</span>
+                            <span class="h6 fw-light mb-0">245 Rooms</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+     
+    </div>	
+    <!-- Widget END -->
+
+</div>
+</div>
+<!-- Page main content END -->

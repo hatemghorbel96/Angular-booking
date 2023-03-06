@@ -23,9 +23,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+            
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/vendor/stepper/js/bs-stepper.min.js",
+              "node_modules/apexcharts/dist/apexcharts.min.js"
+              
+              ]
+           
           },
           "configurations": {
             "production": {

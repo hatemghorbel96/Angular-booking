@@ -1,0 +1,36 @@
+<div class="card-body p-0 mt-2">
+    <div class="row g-2 g-sm-4 align-items-center">
+        <!-- Card image -->
+        <div class="col-sm-4 col-xl-3">
+            <div class="bg-light rounded-3 px-4 py-5">
+                <img src="assets/images/category/cab/seadan.svg" alt="">
+            </div>
+        </div>
+
+        <!-- Card title and rating -->
+        <div class="col-sm-8 col-xl-9">
+            <h5 class="card-title mb-2 text-danger" *ngIf="carextra==2">you dont have a Private Transfers</h5>
+            <h5 class="card-title mb-2 text-success" *ngIf="carextra==3 || carextra==10">Private Transfers (1 car)</h5>
+            <h5 class="card-title mb-2 text-success" *ngIf="carextra==1">Private Transfers (2 cars)</h5>
+            <h6 class="mb-2">Camry, Accord</h6>
+            <!-- Nav divider -->
+            <ul class="nav nav-divider mb-2">
+                <li class="nav-item">SEDAN</li>
+                <li class="nav-item">AC</li>
+                <li class="nav-item">4 Seats</li>
+                <li class="nav-item">2 luggage</li>
+                <li class="nav-item">First Aid</li>
+            </ul>
+                <h6 *ngIf="carextra==2"> -10 DT </h6>
+                <h6 *ngIf="carextra==1"> +10 DT</h6>
+                <h6 *ngIf="carextra==3 || carextra==10"> +0 DT</h6>
+                <h6></h6>
+            <!-- Buttons -->
+          
+            <button  class="btn btn-sm btn-primary-soft mb-0" (click)="backdefault()" *ngIf="carextra==2">add default car (+10 DT)</button> &nbsp;
+            <button  class="btn btn-sm btn-primary-soft mb-0" (click)="addextra()" *ngIf="carextra==3 || carextra == 10 ">add extra car (+10 DT)</button> &nbsp;
+            <button  class="btn btn-sm btn-primary-soft mb-0" (click)="backdefault()" *ngIf="carextra==1">you have an extra car (+10 DT)</button> &nbsp;
+            <button  class="btn btn-sm btn-danger-soft mb-0" (click)="Removecar()" *ngIf="carextra!=2">Remove (- 10) </button>
+        </div>
+    </div> <!-- Row END -->
+</div>	

@@ -1,0 +1,89 @@
+<app-admin-menu></app-admin-menu>
+<div class="page-content">
+<section class="ps-lg-4 pe-lg-3 pt-4">
+    <div class="px-3 pt-2">
+
+    <div>
+        <h2>add tour :</h2>
+    </div>
+   
+        <form>
+            <div class="col-sm-2 col-md-2 col-lg-12">
+                <label hidden>idTour</label>
+                <input hidden type="text" [(ngModel)]="newTour.idTour" name="idTour" class="form-control">
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-12">
+                <label >tour name</label>
+                <input  type="text" [(ngModel)]="newTour.tourname" name="tourname" class="form-control">
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-12">
+                <label >tour days</label>
+                <input  type="text" [(ngModel)]="newTour.tourdays" name="tourdays" class="form-control">
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-12">
+                <label >description</label>
+                <input  type="text" [(ngModel)]="newTour.description" name="description" class="form-control">
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-12">
+                <label>info</label>
+                <input type="text" [(ngModel)]="newTour.info" name="info" class="form-control">
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-12">
+                <label>tour Montant</label>
+                <input type="text" [(ngModel)]="newTour.tourMontant" name="tourMontant" class="form-control">
+            </div>
+            
+            <div class="col-sm-4 col-md-4 col-lg-12">
+                <label>hotels</label>
+                <select class="form-control form-control" id="idHotel" name="idHotel" [(ngModel)]="newIdhotel">
+                    <option *ngFor="let hotel of hotels" [value]="hotel.idHotel" >
+                    {{hotel.namehotel}}
+                    </option>
+                    </select>
+            </div>
+           
+
+
+                    <div class="mb-md-5 mb-4 pb-md-0 pb-2">
+                        <h2 class="h5 mb-2 pb-1">Upload file</h2>
+                        <p class="mb-4 fs-sm">File types supported: PNG, JPG, GIF, WEBP, MP3 or MP4. Max size: 100mb.</p>
+                        <!-- display images-->
+                        <div class="row">
+
+                            <div class="col-2" *ngFor="let file of newTour.tourImages; let i = index;">
+                                <img [src]="file.url" style="width: 100px; height:100px;">
+                                <span class="badge bg-danger" (click)="removeImages(i)">X</span>
+                            </div>
+         
+                        </div>
+                     
+                       <!--  <div class="file-drop-area" appDrag (files)="fileDropped($event)">
+                            
+                          <a (click)="selectFile.click()" class="file-drop-icon ci-cloud-upload">
+                            
+                          </a><span class="file-drop-message">Drag and drop here to upload</span>
+                        </div> -->
+                     
+                        <input class="file-drop-input" type="file" multiple value="select" #selectFile  (change)="onFileSelected($event)">
+                        
+                      </div>
+                       
+                   
+               
+
+            <div class="mt-3">
+                <button type="submit" (click)="ajtour()" class="btn btn-success">Ajouter</button>
+
+              
+
+            </div>
+        </form>
+        
+       
+     
+   
+
+</div>
+
+
+</section>

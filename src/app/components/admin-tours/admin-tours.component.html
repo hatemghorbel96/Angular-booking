@@ -1,0 +1,119 @@
+<app-admin-menu></app-admin-menu>
+<div class="page-content">
+    
+    
+    <!-- =======================
+    Tour grid START -->
+    <section class="pt-0">
+        <div class="container">
+    
+            <!-- Filter and content START -->
+            <div class="row g-4 align-items-center justify-content-between mb-4">
+                <!-- Content -->
+                <div class="col-12 col-xl-8">
+                    <h5 class="mb-0">Showing 1-7 of {{tours.length}} result</h5>
+                </div>
+    
+                <!-- Select option -->
+                <div class="col-xl-2">
+                    <form class="form-control-bg-light">
+                        <select class="form-control js-choice">
+                            <option value="">Most Viewed</option>
+                            <option>Recently search</option>
+                            <option>Most popular</option>
+                            <option>Top rated</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <!-- Filter and content END -->
+    
+            <div class="row g-4">
+    
+                <!-- Card item START -->
+                <div class="col-md-6 col-xl-4" *ngFor="let tour of tours">
+                    <div class="card card-hover-shadow pb-0 h-100">
+                        <!-- Overlay item -->
+                        <div class="position-relative">
+                            <!-- Image -->
+                            <img [src]="tour.tourImages[0].url"  class="card-img-top" alt="Card image">
+                            <!-- Overlay -->
+                            <div class="card-img-overlay d-flex flex-column p-4 z-index-1">
+                                <!-- Card overlay top -->
+                                <div>
+                                    
+                                    <span class="badge text-bg-dark">Adventure</span>
+                                </div>
+                                <!-- Card overlay bottom -->
+                                <div class="w-100 mt-auto">
+                                    <span class="badge text-bg-white fs-6">{{tour.tourdays}} days / {{tour.tourdays - 1}} nights</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Image -->
+    
+                        <!-- Card body START -->
+                        <div class="card-body px-3">
+                            <!-- Title -->
+                            <h5 class="card-title mb-0"><a routerLink="/showtour/{{tour.idTour}}" class="stretched-link">{{tour.tourname}}</a></h5>
+                            <span class="small"><i class="far fa-calendar-alt me-2"></i>April 12-17</span>
+    
+                            <!-- List -->
+                            <ul class="nav nav-divider mt-3 mb-0">
+                                <li class="nav-item h6 fw-normal mb-0" *ngIf="tour.vols.length">
+                                    <i class="fa-solid fa-plane text-orange me-2"></i>{{tour.vols.length}} Flight
+                                </li>
+                                <li class="nav-item h6 fw-normal mb-0">
+                                    <i class="fa-solid fa-hotel text-info me-2"></i>{{tour.hotel.namehotel}} Hotel
+                                </li>
+                                <li class="nav-item h6 fw-normal mb-0">
+                                    <i class="fa-solid fa-person-skating text-danger me-2"></i>2 Activities (soon)
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Card body END -->
+    
+                        <!-- Card footer START-->
+                        <div class="card-footer pt-0">
+                            <!-- Price and Button -->
+                            <div class="d-sm-flex justify-content-sm-between align-items-center flex-wrap">
+                                <!-- Price -->
+                                <div class="hstack gap-2">
+                                    <h5 class="fw-normal text-success mb-0"> DT 1500</h5>
+                                    <small>/per person</small>
+                                    <span class="text-decoration-line-through">DT 1800</span>
+                                </div>
+                                <!-- Button -->
+                                <div class="mt-2 mt-sm-0">
+                                    <a routerLink="/showtour/{{tour.idTour}}" class="btn btn-sm btn-primary mb-0">View Details</a>    
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                <!-- Card item END -->
+    
+    
+            </div> <!-- Row END -->
+    
+            <!-- Pagination -->
+            <div class="row">
+                <div class="col-12">
+                    <nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
+                        <ul class="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                            <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fa-solid fa-angle-left"></i></a></li>
+                            <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
+                            <li class="page-item mb-0"><a class="page-link" href="#">6</a></li>
+                            <li class="page-item mb-0"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =======================
+    Tour grid END -->
+</div>

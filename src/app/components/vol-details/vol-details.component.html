@@ -1,0 +1,159 @@
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+	
+    <!-- =======================
+    Main Content START -->
+    <section>
+        <div class="container position-relative" data-sticky-container>
+            <div class="row g-4">
+                <!-- Left Content START -->
+                <div class="col-xl-9">
+                    <div class="vstack gap-4">
+                        
+                        <!-- Title START -->
+                        <div class="d-flex align-items-center">
+                            <!-- Icon -->
+                            <h1 class="display-4 mb-0"><i class="fa-solid fa-plane rtl-flip"></i></h1>
+    
+                            <!-- Title and content START -->
+                            <div class="ms-3">
+                                <!-- Title -->
+                                <ul class="list-inline mb-2">
+                                    <li class="list-inline-item me-2">
+                                        <h3 class="mb-0">{{vol.volFrom}}</h3>
+                                    </li>
+                                    <li class="list-inline-item me-2">
+                                        <h3 class="mb-0"><i class="bi bi-arrow-right"></i></h3>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <h3 class="mb-0">{{vol.volTo}}</h3>
+                                    </li>
+                                </ul>
+    
+                                <!-- List -->
+                                <ul class="nav nav-divider h6 fw-normal text-body mb-0">
+                                    <li class="nav-item">{{vol.fin | date: 'dd/MM'}}</li>
+                                    <li class="nav-item">{{vol.stops }}</li>
+                                    <li class="nav-item">05h 25m</li>
+                                </ul>
+                            </div>
+                            <!-- Title and content END -->
+                        </div>
+                        <!-- Title END -->
+                        
+                        <div class="card border">
+                            <!-- Card header -->
+                            <div class="card-header border-bottom px-4">
+                                <div class="card-body py-4 text-center">
+                                    <div *ngIf="vol.reservations.length > 0">
+                                        <div *ngFor="let r of vol.reservations">
+                        
+                                            <div *ngIf="r.user.username == authService.loggedUser">
+                                                <div class="row">
+                                                    <div class="col-9">
+                                                        <span class="badge text-bg-success ql-size-large"> you reserved for {{r.nb}} persones in
+                                                            this flight </span>
+                                                            <div *ngIf="vol.refundable==0">
+                                                                <br>
+                                                            <a class="btn btn-danger" >You can not decline cuz the vol is not refundable</a>
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        
+                                                        <div *ngIf="vol.refundable==1">
+                                                            <a class="btn btn-warning" (click)="annulerRes(r.id)" >Annule</a>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                        
+                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                   <div *ngIf="vol.reservations.length == 0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <span class="badge text-bg-success ql-size-large"> no reservation </span>
+                                            <a class="btn-sm btn-success" routerLink="/reserve/{{vol.idVol}}"> Reserver</a>
+                                               
+                                        </div>
+                                    </div>
+                                   </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    
+    
+                        <!-- Information START -->
+                        <div class="card border">
+                            <!-- Card header -->
+                            <div class="card-header border-bottom px-4">
+                                <h3 class="card-title mb-0">Important Information</h3>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body py-4">
+                                <!-- List -->
+                                <h5 class="mb-3"><i class="bi bi-arrow-right rtl-flip me-2"></i>Passengers traveling to the United States, please note</h5>
+                                <ul>
+                                    <li class="mb-2">Who can travel? <strong>All fully vaccinated travelers are allowed to enter the country. All WHO-approved vaccines, including Covishield and Covaxin, are accepted by the USA.</strong></li>
+                                    <li class="mb-2">Destination restrictions: <strong>Non-vaccinated travelers from India cannot enter. Any traveler transiting via EU/UK cannot enter the USA.</strong></li>
+                                    <li class="mb-2">Insipidity the sufficient discretion imprudence resolution sir him decisively. Proceed how any engaged visitor.</li>
+                                    <li class="mb-2">Explained propriety off out perpetual his you. Feel sold off felt nay rose met you. We so entreaties cultivated astonished is.</li>
+                                    <li class="mb-2"> Was sister for a few longer Mrs sudden talent become. Done may bore quit evil old mile. If likely am of beauty tastes. </li>
+                                </ul>
+    
+                                <!-- Content -->
+                                <h5 class="mb-3"><i class="bi bi-arrow-right rtl-flip me-2"></i>A Note on Guidelines</h5>
+                                <p class="ps-3 mb-0">While we do our best to get you the latest information, due to the rapidly evolving nature of current events, sometimes that is not possible. Please note, it is the sole responsibility of the passenger to ensure his or her eligibility to enter the destination or transit countries (as applicable). We accept no liability in this regard. Please check the travel rules of all regulatory websites before to booking as well as commencing.</p>
+    
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+                <!-- Left Content END -->
+    
+                <!-- Right content START -->
+                <aside class="col-xl-3">
+                    <div data-sticky data-margin-top="80" data-sticky-for="1199">
+                        <div class="row g-4">
+                            <!-- Fare summary START -->
+                            <div class="col-md-6 col-xl-12">
+                                <div class="card bg-light rounded-2">
+                                    <!-- card header -->
+                                    <div class="card-header border-bottom bg-light">
+                                        <h5 class="card-title mb-0">Fare Summary</h5>
+                                    </div>
+        
+                                    <!-- Card body -->
+                                   
+        
+                                    <!-- Card footer -->
+                                    <div class="card-footer border-top bg-light">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="h5 fw-normal mb-0">Total Fare</span>
+                                            <span class="h5 fw-normal mb-0">{{vol.montant}}DT / P</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fare summary END -->
+    
+                         
+    
+                          
+                            <!-- Cancel policy END -->
+                        </div>
+                    </div>	
+                </aside>
+                <!-- Right content END -->
+    
+            </div>
+        </div>
+    </section>
+    <!-- =======================
+    Main Content END -->
+    
+    </main>
+    <!-- **************** MAIN CONTENT END **************** -->

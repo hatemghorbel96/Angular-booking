@@ -1,0 +1,30 @@
+
+<app-admin-menu></app-admin-menu>
+<div class="page-content">
+<div class="container">
+<a class="btn btn-warning" routerLink="/addairline">Add airline</a>
+<div class="row mt-3" >
+    <div class="col-4  mt-3" *ngFor="let s of airlines">
+      
+     
+
+            <div class="card " >
+
+
+              <div class="card-body">
+                <h5 class="card-title">{{s.nomAirline}}</h5>
+                <img class="card-img-top img-responsive" src = "{{this.airlineService.host+'/booking/airline/imageAirline/'+s.idairline}}"  style="width:400px; height:300px;"  alt="">
+          
+              
+              
+              <!--  <a class="btn btn-success btn-icon mt-3" [routerLink]="['/updateSlider',s.idairline]">Modifier</a> &nbsp; -->
+               <a class="btn btn-info btn-icon mt-3" data-bs-toggle="modal" href="#exampleModalToggle" (click)="getAirline(s.idairline)">
+                <i class="ci-edit"> Modifier image</i>
+              </a> 
+              </div>
+            </div>
+           
+            
+          </div>
+    </div>
+</div>

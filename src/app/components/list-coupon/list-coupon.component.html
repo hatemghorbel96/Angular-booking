@@ -1,0 +1,37 @@
+<app-admin-menu></app-admin-menu>
+<div class="page-content">
+<div class="container mt-5">
+   
+    <div class="row g-4" >
+     
+          
+          <div class="col-sm-6 col-lg-6 col-xl-3 mb-3" *ngFor="let c of coupons ">
+            <div class="card bg-success bg-opacity-10 h-100 p-4">
+                <!-- Image -->
+                <div class="text-center">
+                <img src="https://ps.w.org/add-coupon-by-link-for-woocommerce/assets/icon.svg?rev=2571233" class="w-75" alt="">
+                </div>
+                <!-- Card body START -->
+                <div class="card-body mt-1  p-0">
+                    <span class="mb-1">off</span>
+                    <h4 class="mb-1">-{{c.reduction}} DT</h4>
+                   <!--  <h6 class="fw-normal">created :{{c.dateCreated | date:'dd/MM/yyyy'}}</h6> -->
+                    <h6 class="fw-normal">expire :{{c.dateexpiration | date:'dd/MM/yyyy'}}</h6>
+
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <div class="bg-primary bg-opacity-10 border border-2 border-primary border-dashed rounded-2 px-3 py-2">
+                         <h5 class="fw-normal user-select-all mb-0">{{c.code}}</h5>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- Card body END -->
+            </div>
+        </div>
+
+               
+               
+                
+            
+        </div>
+    </div>

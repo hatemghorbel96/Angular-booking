@@ -1,13 +1,74 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="utf-8">
   <title>Booking</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+		var theme = localStorage.getItem('data-theme');
+		var root = document.documentElement;
+		if (theme === 'dark' && theme !== undefined) {
+			root.classList.add('dark-mode');
+		} else {
+			root.classList.remove('dark-mode');
+		}
+	</script>
+	<base href="/">
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+	<script src="https://kit.fontawesome.com/ab18cab0ff.js" crossorigin="anonymous"></script>
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Poppins:wght@400;500;700&amp;display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/splide-master/dist/css/splide.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/stepper/css/bs-stepper.min.css">
+	<link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/choices/css/choices.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/flatpickr/css/flatpickr.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/apexcharts/css/apexcharts.css">
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
 </head>
 <body>
   <app-root></app-root>
+  <div class="back-top"></div>
+  
+  <script src="assets/vendor/stepper/js/bs-stepper.min.js"></script>
+ <script src="assets/vendor/tiny-slider/tiny-slider.js"></script>
+  <script src="assets/vendor/jarallax/jarallax.min.js"></script>
+  <script src="assets/vendor/jarallax/jarallax-video.min.js"></script>		
+  <script src="assets/vendor/apexcharts/js/apexcharts.min.js"></script>							
+
+										  
+
+
+
 </body>
+<script src="assets/js/sockjs.min.js"></script>
+<script src="assets/js/stomp.min.js"></script>
+<script src="assets/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
+<script src="assets/vendor/choices/js/choices.min.js"></script>
+<script src="assets/splide.min.js"></script>
+<script src="assets/splide.min.css"></script>
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vendors -->
+<script src="assets/vendor/splide-master/dist/js/splide.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.js"></script>
+
+<!-- ThemeFunctions -->
+<script src="assets/js/functions.js"></script>
 </html>

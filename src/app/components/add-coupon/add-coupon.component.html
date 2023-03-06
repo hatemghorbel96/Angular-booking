@@ -1,0 +1,33 @@
+<app-admin-menu></app-admin-menu>
+<div class="page-content">
+<div class="container mt-5">
+    <div>
+       
+    </div>
+   
+        <form>
+            <div class="col-sm-2 col-md-2 col-lg-12">
+                <label hidden>ID coupon</label>
+                <input hidden type="text" [(ngModel)]="newCoupon.idcoupon" name="idcoupon" class="form-control">
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-12">
+                <label>reduction</label>
+                <input type="number" [(ngModel)]="newCoupon.reduction" name="reduction" class="form-control">
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-12">
+                <label>date expiration</label>
+                <input type="date" [(ngModel)]="newCoupon.dateexpiration" name="dateexpiration" class="form-control">
+            </div>
+          
+             
+            <div class="mt-3">
+                <button type="submit" (click)="addnewcoupon()" class="btn btn-success">add</button>
+
+              
+
+            </div>
+        </form>
+
+   
+    
+</div>

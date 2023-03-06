@@ -1,0 +1,241 @@
+<app-admin-menu></app-admin-menu>
+<div class="page-content">
+<div class="container">
+    <h1 class="fs-2">{{tour.tourname}}</h1>
+<div class="card-body p-0 pt-3">
+    <cdk-accordion class="accordion accordion-icon accordion-bg-light" id="accordionExample2">
+        <!-- Item -->
+        <div class="accordion-item mb-3">
+            <h6 class="accordion-header font-base" id="heading-1">
+                <button class="accordion-button rounded d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                    <span class="lead me-1 fw-normal">Day 1:</span>Default | going to hotel
+                </button>
+            </h6>
+            <!-- Body -->
+            <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="heading-1" data-bs-parent="#accordionExample2">
+                <div class="accordion-body mt-3">
+                    <div class="vstack gap-4">
+
+                        <!-- Flight list START -->
+                        <div class="card bg-transparent p-0">
+                            <!-- Card header -->
+                            <div class="card-header bg-transparent p-0">
+                                <span class="text-body"><i class="fa-solid fa-check-circle me-2"></i>Flight details</span>
+                                <div class="p-3 bg-light rounded-2 d-sm-flex justify-content-sm-between align-items-center mb-4 mt-2">
+                                    <!-- Airline Name -->
+                                    <h6 class="mb-0">New York - Malaysia</h6>
+                                    <h6 class="fw-normal mb-0"><span class="text-body">Date:</span> 4 July 2022</h6>
+                                </div>
+                            </div>
+
+                            <!-- Card body START -->
+                            <div class="card-body p-0">
+                                <div class="row g-4">
+                                    <!-- Air line name -->
+                                    <div class="col-md-3">
+                                        <!-- Image -->
+                                        <img src="assets/images/element/09.svg" class="w-80px mb-3" alt="">
+                                        <!-- Title -->
+                                        <h6 class="fw-normal small mb-0">Phillippines Airline</h6>
+                                    </div>
+    
+                                    <!-- Airport detail -->
+                                    <div class="col-4 col-md-3">
+                                        <!-- Title -->
+                                        <h5>CDG</h5>
+                                        <h6 class="mb-0">2:50 pm</h6>
+                                    </div>
+    
+                                    <!-- Time -->
+                                    <div class="col-4 col-md-3 text-center">
+                                        <!-- Time -->
+                                        <h6>5hr 50min</h6>
+    
+                                        <div class="position-relative my-4">
+                                            <!-- Line -->
+                                            <hr class="bg-primary opacity-5 position-relative">
+                                            <!-- Icon -->
+                                            <div class="icon-md bg-primary text-white rounded-circle position-absolute top-50 start-50 translate-middle">
+                                                <i class="fa-solid fa-fw fa-plane"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Airport detail -->
+                                    <div class="col-4 col-md-3 text-end">
+                                        <!-- Title -->
+                                        <h5>JFK</h5>
+                                        <h6 class="mb-0">7:35 pm</h6>
+                                    </div>
+    
+                                </div>
+                            </div>
+                            <!-- Card body END -->
+                        </div>
+                        <!-- Flight list END -->
+                        
+                        <hr class="my-0"> <!-- Divider -->
+
+                        <!-- Cab list START -->
+                        <div class="card bg-transparent p-0">
+                            <!-- Card header -->
+                            <div class="card-header bg-transparent p-0">
+                                <span class="text-body"><i class="fa-solid fa-check-circle me-2"></i>Transfer from Airport to hotel</span>
+                            </div>
+                            
+                            <!-- car commpoenet-->
+                            <app-car></app-car>
+                            <!-- Card body -->
+                         
+                        </div>
+                        <!-- Cab list END -->
+
+                        <hr class="my-0"> <!-- Divider -->
+
+                        <!-- Hotel list START -->
+                        <div class="card bg-transparent p-0">
+                            <!-- Card header -->
+                            <div class="card-header bg-transparent p-0">
+                                <span class="text-body"><i class="fa-solid fa-check-circle me-2"></i>Check-In to hotel</span>
+                            </div>
+
+                            <!-- Card body -->
+                            <div class="card-body p-0 mt-2">
+                                <div class="row g-2 g-sm-4">
+                                    <!-- Card image -->
+                                    <ng-container *ngFor="let h of hotels">
+                                    
+                                   
+                                        <div  *ngIf="h.idHotel == tour.hotel.idHotel" class="col-sm-4" >
+                                        <img [src]="h.hotelImages[0].url" class="card-img" alt="Card image" style="height: 150px;">
+                                        </div>
+                                    </ng-container>
+                                    <!-- Card title and rating -->
+                                    <div class="col-sm-8">
+                                        <!-- Badge -->
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <div class="badge bg-dark">Hotel</div>
+                                            <a href="hotel-list.html" class="btn btn-sm btn-link p-0 mb-0 text-decoration-underline">Change</a>
+                                        </div>
+
+                                        <!-- Title -->
+                                        <h5 class="card-title mb-1"><a href="hotel-detail.html">{{tour.hotel.namehotel}}</a></h5>
+                                        <span>2.9km from the airport</span>
+                                        
+                                        <!-- List -->
+                                        <ul class="list-group list-group-borderless mb-0 mt-2 small">
+                                            <li class="list-group-item d-flex p-0">
+                                                <i class="far fa-calendar-alt me-2"></i>Tue, 5 Jul 2022 - Sat 9 Jul 2022
+                                            </li>
+                                            <li class="list-group-item d-flex text-success p-0">
+                                                <i class="bi bi-patch-check-fill me-2"></i>Free Breakfast
+                                            </li>
+                                        </ul>
+
+                                        <h6 class="mb-0 fw-light small mt-2">
+                                            Room type: Standard room - Holiday selection
+                                            <a href="hotel-detail.html" class="btn btn-sm btn-link p-0 mb-0 text-decoration-underline ms-2">Change room</a>
+                                        </h6>
+
+                                    </div>
+                                </div> <!-- Row END -->
+                            </div>	
+                        </div>
+  
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item -->
+        <cdk-accordion-item class="accordion-item mb-3 mt-3" *ngFor="let t of acts;let i=index;" #accordionItem="cdkAccordionItem"
+       
+        role="button"
+        tabindex="0"
+        [attr.id]="'accordion-header-' + i"
+        [attr.aria-expanded]="accordionItem.expanded"
+        [attr.aria-controls]="'accordion-body-' + i">
+            <h6 class="accordion-header font-base mt-3 mb-3" (click)="accordionItem.toggle()">
+                <button class="accordion-button  d-inline-block collapsed d-block pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2"  aria-expanded="false" aria-controls="collapse-2">
+                    <span class="lead me-1 fw-normal">{{t.title}}:</span>{{t.description}}
+                </button>
+            </h6>
+            <!-- Body -->
+            <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#accordionExample2">
+                <div class="accordion-body mt-3"  
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-' + i"
+                [attr.aria-labelledby]="'accordion-header-' + i">
+                    
+                    {{t.longdescription}}
+                  
+
+                   
+
+                </div>
+            </div>
+        </cdk-accordion-item>
+
+    </cdk-accordion>
+</div>
+<button class="btn btn-primary mb-5" type="button" data-bs-toggle="modal" data-bs-target="#inquiryForm"><i class="fa-solid fa-person-skating me-2"></i>add activity</button>
+</div>
+
+
+<div class="modal fade mb-5" id="inquiryForm" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Title -->
+            <div class="modal-header ">
+                <h5 class="modal-title" id="inquiryFormlabel">Add activity</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+          
+            <div class="modal-body p-3">
+
+
+                <div class="card bg-transparent">
+                    <form>
+                        <div class="col-sm-2 col-md-2 col-lg-12">
+                            <label hidden>ID act</label>
+                            <input hidden type="text" [(ngModel)]="newActivity.idActivity" name="idActivity" class="form-control">
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-12">
+                            <label>title</label>
+                            <input type="text" [(ngModel)]="newActivity.title" name="title" class="form-control">
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-12">
+                            <label>description</label>
+                            <input type="text" [(ngModel)]="newActivity.description" name="description" class="form-control">
+                        </div>
+
+                        <div class="col-sm-4 col-md-4 col-lg-12">
+                            <label>long description</label>
+                            <input type="text" [(ngModel)]="newActivity.longdescription" name="longdescription" class="form-control">
+                        </div>
+                        
+                       
+                        
+                       
+                        
+                        <div class="mt-3 ">
+                            <button type="submit" (click)="addAct()" class="btn btn-success">Ajouter</button>
+                    
+                           <!--  <div>
+                                <h3>{{message}}</h3>
+                            </div> -->
+                    
+                        </div>
+                    </form>
+                   
+
+                </div>
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </div>

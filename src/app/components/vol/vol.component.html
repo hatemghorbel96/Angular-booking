@@ -1,0 +1,607 @@
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+    <!-- =======================
+    Search START -->
+    <section class="pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Booking from START -->
+                    <div class="bg-mode border rounded position-relative px-4 pt-4 mb-4 mb-sm-0">
+                        <div class="row g-4">
+                            <!-- Nav tabs START -->
+                            <div class="col-lg-6">
+                                <ul class="nav nav-pills nav-pills-dark" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link rounded-start rounded-0 mb-0 active" id="pills-one-way-tab" data-bs-toggle="pill" data-bs-target="#pills-one-way" type="button" role="tab" aria-selected="true">One Way</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link rounded-end rounded-0 mb-0" id="pills-round-trip-tab" data-bs-toggle="pill" data-bs-target="#pills-round-trip" type="button" role="tab" aria-selected="false">Round Trip</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Nav tabs END -->
+            
+                            <!-- Ticket class -->
+                            <div class="col-lg-3 ms-auto">
+                                <div class="form-control-bg-light form-fs-md">
+                                    <select class="form-control js-choice">
+                                        <option value="">Select Class</option>
+                                        <option>Economy</option>
+                                        <option selected>Premium Economy</option>
+                                        <option>Business</option>
+                                        <option>First Class</option>
+                                    </select>
+                                </div>	
+                            </div>
+        
+                            <!-- Ticket Passenger -->
+                            <div class="col-lg-3 ms-auto">
+                                <div class="form-control-bg-light form-fs-md">
+                                    <select class="form-control js-choice">
+                                        <option value="">Select Travelers</option>
+                                        <option>1</option>
+                                        <option selected>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>	
+                            </div>
+                        </div>
+        
+                        <!-- Tab content START -->
+                        <div class="tab-content mt-4" id="pills-tabContent">
+                            <!-- One way tab START -->
+                            <div class="tab-pane fade show active" id="pills-one-way" role="tabpanel" aria-labelledby="pills-one-way-tab">
+                                <div class="row g-4">
+                                    <!-- Leaving From -->
+                                    <div class="col-md-6 col-lg-4 position-relative">
+                                        <div class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3">
+                                            <!-- Input field -->
+                                            <label class="mb-1"><i class="bi bi-geo-alt me-2"></i>From</label>
+                                            <select class="form-control js-choice" data-search-enabled="true">
+                                                <option value="">Select location</option>
+                                                <option selected>San Jacinto, USA</option>
+                                                <option>North Dakota, Canada</option>
+                                                <option>West Virginia, Paris</option>
+                                            </select>
+                                        </div>
+        
+                                        <!-- Auto fill button -->
+                                        <div class="btn-flip-icon mt-3 mt-md-0">
+                                            <button class="btn btn-white shadow btn-round mb-0"><i class="fa-solid fa-right-left"></i></button>
+                                     </div>
+                                    </div>
+        
+                                    <!-- Going To -->
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3">
+                                            <!-- Input field -->
+                                            <label class="mb-1"><i class="bi bi-send me-2"></i>To</label>
+                                            <select class="form-control js-choice" data-search-enabled="true">
+                                                <option value="">Select location</option>
+                                                <option>San Jacinto, USA</option>
+                                                <option selected>North Dakota, Canada</option>
+                                                <option>West Virginia, Paris</option>
+                                            </select>
+                                        </div>
+                                    </div>
+        
+                                    <!-- Departure -->
+                                    <div class="col-lg-4">
+                                        <div class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3">
+                                            <label class="mb-1"><i class="bi bi-calendar me-2"></i>Departure</label>
+                                    <!--                                             <input type="datetime-local" class="form-control flatpickr" placeholder="Select date"  [(ngModel)]="valuemin" (change)="handleSearchprice()">
+                                    -->                                       
+                                    <input type="datetime-local" class="form-control flatpickr" placeholder="Select date" >
+
+                                    </div>
+                                    </div>
+        
+                                    <div class="col-12 text-end pt-0">
+                                        <a  class="btn btn-primary mb-n4" href="#">Find ticket <i class="bi bi-arrow-right ps-3"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- One way tab END -->
+        
+                            <!-- Round way tab END -->
+                            <div class="tab-pane fade" id="pills-round-trip" role="tabpanel" aria-labelledby="pills-round-trip-tab">
+                                <div class="row g-4">
+        
+                                    <!-- Leaving From -->
+                                    <div class="col-md-6 col-xl-3 position-relative">
+                                        <div class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3">
+                                            <!-- Input field -->
+                                            <label class="mb-1"><i class="bi bi-geo-alt me-2"></i>From</label>
+                                            <select class="form-control js-choice" data-search-enabled="true">
+                                                <option value="">Select location</option>
+                                                <option>San Jacinto, USA</option>
+                                                <option>North Dakota, Canada</option>
+                                                <option>West Virginia, Paris</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <!-- Auto fill button -->
+                                        <div class="btn-flip-icon mt-3 mt-md-0">
+                                             <button class="btn btn-white shadow btn-round mb-0"><i class="fa-solid fa-right-left"></i></button>
+                                        </div>
+                                    </div>
+        
+                                    <!-- Going To -->
+                                    <div class="col-md-6 col-xl-3">
+                                        <div class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3">
+                                            <!-- Input field -->
+                                            <label class="mb-1"><i class="bi bi-send me-2"></i>To</label>
+                                            <select class="form-control js-choice" data-search-enabled="true">
+                                                <option value="">Select location</option>
+                                                <option>San Jacinto, USA</option>
+                                                <option>North Dakota, Canada</option>
+                                                <option>West Virginia, Paris</option>
+                                            </select>
+                                        </div>
+                                    </div>
+        
+                                    <!-- Departure -->
+                                    <div class="col-md-6 col-xl-3">
+                                        <div class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3">
+                                            <label class="mb-1"><i class="bi bi-calendar me-2"></i>Departure</label>
+                                            <input type="text" class="form-control flatpickr" data-date-format="d M Y" placeholder="Select date">
+                                        </div>
+                                    </div>
+        
+                                    <!-- Return -->
+                                    <div class="col-md-6 col-xl-3">
+                                        <div class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3">
+                                            <label class="mb-1"><i class="bi bi-calendar me-2"></i>Return</label>
+                                            <input type="text" class="form-control flatpickr" data-date-format="d M Y" placeholder="Select date">
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-12 text-end pt-0">
+                                        <a  class="btn btn-primary mb-n4" href="#">Find ticket <i class="bi bi-arrow-right ps-3"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Round way tab END -->
+                        </div>
+                        <!-- Tab content END -->
+                    </div>
+                    <!-- Booking from END -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =======================
+    Search START -->
+        
+    <!-- =======================
+    Title and notice board START -->
+    <section class="pt-0">
+        <div class="container position-relative">
+    
+            <!-- Title and button START -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-sm-flex justify-content-sm-between align-items-center">
+                        <!-- Title -->
+                        <div class="mb-3 mb-sm-0">
+                            <h1 class="fs-3">{{vols.length}} Flight Available</h1>
+                            <ul class="nav nav-divider h6 mb-0">
+                                <li class="nav-item">25 Jan</li>
+                                <li class="nav-item">1 Stop</li>
+                            </ul>
+                        </div>
+    
+                        <!-- Offcanvas Button -->
+                        <button class="btn btn-primary d-xl-none mb-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+                            <i class="fa-solid fa-sliders-h me-1"></i> Show filters
+                        </button>
+                    </div>	
+                </div>
+            </div>
+          
+    
+        </div>
+    </section>
+    <!-- =======================
+    Title and notice board END -->
+    
+    <!-- =======================
+    Flight list START -->
+    <section class="pt-0">
+        <div class="container">
+            <div class="row">
+              
+                <!-- Left sidebar START -->
+                <aside class="col-xl-4 col-xxl-3">
+                    <!-- Responsive offcanvas body START -->
+                        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
+                            <!-- Offcanvas header -->
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasSidebarLabel">Advance Filters</h5>
+                                <button  type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasSidebar" aria-label="Close"></button>
+                            </div>
+    
+                            <!-- Offcanvas body -->
+                            <div class="offcanvas-body flex-column p-3 p-xl-0">
+                                <div class="rounded-3 shadow">
+                                    <!-- Popular filters START -->
+                                   
+                                    <!-- Popular filters END -->
+    
+                                    <hr class="my-0"> <!-- Divider -->
+    
+                                    <!-- Price START -->
+                                 
+
+                                    <div class="card card-body rounded-0 p-4">
+                                        <!-- Title -->
+                                        <h6 class="mb-2">Price</h6>
+                                        <!-- Price group -->
+                                    
+                                    
+                                <div class="slider-range" data-start-min="250" data-start-max="680" data-min="0" data-max="100000" data-step="1">
+                                    <div class="range-slider-ui">
+                                        <div class="range">
+                                
+                                            <input type="range" step="10" min="0" max="10000"   [(ngModel)]="valuemin" (change)="handleSearchprice()">
+                                            <input type="range"  step="10" min="0" max="10000" 
+                                                [(ngModel)]="valuemax" (change)="handleSearchprice()">
+                                
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                    <div class="d-flex pb-1">
+                                        <div class="w-20 ">
+                                            <div class="input-group input-group-sm"><span class="input-group-text">Min</span>
+                                                <input class="form-control range-slider-value-min" type="text" [(ngModel)]="valuemin"
+                                                    (keyup)="handleSearchprice()">
+                                                   
+                                            </div>
+                                        </div>
+                                        <div class="w-20 ">
+                                            <div class="input-group input-group-sm"><span class="input-group-text">Max</span>
+                                                <input class="form-control range-slider-value-max" type="text" [(ngModel)]="valuemax"
+                                                    (keyup)="handleSearchprice()">
+                                            </div>
+                                        </div>
+                                   
+                                </div>
+                                    </div></div>
+                                    <!-- Price END -->
+     
+                                    <hr class="my-0"> <!-- Divider -->
+    
+                                    <!-- Onward stops START -->
+                                    <div class="card card-body rounded-0 p-4">
+                                        <!-- Title -->
+                                        <h6 class="mb-2"> Stops</h6>
+                                        <!-- Onward stops group -->
+                                        <ul class="list-inline mb-0 g-3">
+                                            <!-- Item -->
+                                            <li class="list-inline-item mb-0" *ngFor="let s of stopslist.values()">
+                                                <input type="checkbox" value="{{s}}" id="{{s}}"
+                                                    (change)="ModifyFilterstops($any($event.target).value, $any($event.target).checked)" style=" display: none;">
+                                                <label class="btn btn-sm btn-light btn-primary-soft-check" for="{{s}}">{{s}}</label>
+                                            </li>
+                                            <!-- Item -->
+                                         
+                                        </ul>
+                                    </div>
+                                    <!-- Onward stops END -->
+    
+                                    <hr class="my-0"> <!-- Divider -->
+    
+                                
+                                    <hr class="my-0"> <!-- Divider -->
+    
+                                    <!-- Preferred Airline START -->
+                                    <div class="card card-body rounded-0 p-4">
+                                        <!-- Title -->
+                                        <h6 class="mb-2">Preferred Airline</h6>
+                                        <!-- Preferred Airline group -->
+                                        <div class="col-12">
+                                            <!-- Checkbox -->
+                                            
+                                            <div class="form-check" *ngFor="let v of airlines">
+                                               <!--  <input class="form-check-input" type="checkbox"  (change)="checkCheckBoxvalue(v.idairline)"> -->
+                                                <input type="checkbox" class="form-check-input" value="{{v.idairline}}" id="{{v.idairline}}" (change)="ModifyFilterAirline($any($event.target).value, $any($event.target).checked)"> 
+                                                <label class="form-check-label" for="airlineType1">
+                                                    <img src = "{{this.airlineService.host+'/booking/airline/imageAirline/'+v.idairline}}" class="h-15px fa-fw me-2" alt="">{{v.nomAirline}}
+                                                </label>
+                                            </div>	
+                                          
+                                            
+                                          
+                                        </div>
+                                    </div>
+                                    <!-- Preferred Airline END -->
+    
+                                    <hr class="my-0"> <!-- Divider -->
+    
+                                    <!-- Layover Airport START -->
+                                    <div class="card card-body rounded-0 rounded-bottom p-4">
+                                        <!-- Title -->
+                                        <h6 class="mb-2">Layover Airport</h6>
+                                        <!-- Layover Airport group -->
+                                        <div class="col-12">
+                                            <!-- Checkbox -->
+                                            <div class="d-flex justify-content-between align-items-center"  *ngFor="let country of countries.values()">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="{{country}}" id="{{country}}" (change)="ModifyFilterdCountry($any($event.target).value, $any($event.target).checked)" >
+                                                    <label class="form-check-label" for="lauoverType1">{{country}}</label>
+                                                </div>
+                                               <!--  <span class="small">(01)</span> -->
+                                            </div>	
+                                        
+                                            <!-- Collapse button -->
+                                            <a class="btn-more d-flex align-items-center collapsed p-0 mb-0 mt-2" data-bs-toggle="collapse" href="#lauoverCollapes" role="button" aria-expanded="false" aria-controls="lauoverCollapes">
+                                                See <span class="see-more ms-1">more</span><span class="see-less ms-1">less</span><i class="fa-solid fa-angle-down ms-2"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Layover Airport END -->
+                                </div><!-- Form End -->
+                            </div>
+    
+                            <!-- Buttons -->
+                            <div class="d-flex justify-content-between p-2 p-xl-0 mt-xl-4">
+                                <button class="btn btn-link p-0 mb-0">Clear all</button>
+                                <button class="btn btn-primary mb-0">Filter Result</button>
+                            </div>
+        
+                        </div>
+                    <!-- Responsive offcanvas body END -->
+                </aside>
+                <!-- Left sidebar END -->
+    
+                <!-- Main content START -->
+                <div class="col-xl-8 col-xxl-9">
+                    <div class="vstack gap-4">
+    
+                   
+                       
+    
+                        <!-- Ticket item START -->
+                       <!--  -->
+                        <div class="card border" *ngFor="let v of getVolsToDisplay() ">
+                            <!-- Card header -->
+                            <div class="card-header">
+                                <div class="d-md-flex justify-content-md-between">
+                                    <!-- Airline Name -->
+                                    <div class="d-flex align-items-center mb-2 mb-md-0">
+                                        <img src = "{{this.airlineService.host+'/booking/airline/imageAirline/'+v.airline.idairline}}" class="w-100px me-2" alt="">
+                                        <h6 class="fw-normal mb-0">{{v.airline.nomAirline}}</h6>
+                                    </div>
+                                    <h6 class="fw-normal mb-0"><span class="text-body">Travel Class:</span> {{v.classtype}}</h6>
+                                    <div class="d-flex align-items-center mb-2 mb-md-0">
+                                        <a class="btn btn-warning text-decoration-underline"  *ngIf="v.tour?.idTour != null" routerLink="/tourdetails/{{v.tour?.idTour}}">
+                                            <i class="bi bi-eye-fill me-1"></i> Tour Details 
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Card body START -->
+                            <div class="card-body p-4 pb-0">
+                                <div class="row g-4 align-items-center">
+                                    <!-- Ticket START -->
+                                    <div class="col-md-9">
+                                        <!-- Ticket detail START -->
+                                        <div class="row g-4">
+                                            <!-- Airport detail -->
+                                            <div class="col-sm-4">
+                                                <h4>{{v.dep | date:('hh:mm a')}}</h4>
+                                                <h6 class="mb-0 fw-normal">{{v.dep | date: 'EEEE,MMM d, y'}}</h6>
+                                                <p class="mb-0">{{v.volFrom}}</p>
+                                            </div>
+        
+                                            <!-- Time -->
+                                            <div class="col-sm-4 my-sm-auto text-center">
+                                                <h5>{{calculatehours(v.dep,v.fin)}}</h5>
+                                                <div class="position-relative my-4">
+                                                    <!-- Line -->
+                                                    <hr class="bg-primary opacity-5 position-relative">
+                                                    <!-- Icon -->
+                                                    <div class="icon-md bg-primary text-white rounded-circle position-absolute top-50 start-50 translate-middle">
+                                                        <i class="fa-solid fa-fw fa-plane rtl-flip"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <!-- Airport detail -->
+                                            <div class="col-sm-4">
+                                                <h4>{{v.fin | date:('hh:mm a')}}</h4>
+                                                <h6 class="mb-0 fw-normal">{{v.fin | date: 'EEEE,MMM d, y'}}</h6>
+                                                <p class="mb-0">{{v.volTo}}</p>
+                                            </div>
+                                        </div>
+                                        <!-- Ticket detail END -->
+                                        <div *ngIf="v.retour">
+                                        <!-- Divider -->
+                                        <hr class="my-4">
+    
+                                        <!-- Ticket detail START -->
+                                        <div class="row g-4">
+                                            <!-- Airport detail -->
+                                            <div class="col-sm-4">
+                                            <h4>{{v.retourhome | date:('hh:mm a')}}</h4>
+                                            <h6 class="mb-0 fw-normal">{{v.retourhome | date: 'EEEE,MMM d, y'}}</h6>
+                                            <p class="mb-0">{{v.volTo}}</p>
+                                            </div>
+        
+                                            <!-- Time -->
+                                            <div class="col-sm-4 my-sm-auto text-center">
+                                                <h5>{{calculatehours(v.retour,v.retourhome)}}</h5>
+                                                <div class="position-relative my-4">
+                                                    <!-- Line -->
+                                                    <hr class="bg-primary opacity-5 position-relative">
+                                                    <!-- Icon -->
+                                                    <div class="icon-md bg-primary text-white rounded-circle position-absolute top-50 start-50 translate-middle">
+                                                        <i class="fa-solid fa-fw fa-plane fa-rotate-180"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <!-- Airport detail -->
+                                            <div class="col-sm-4">
+
+                                                <h4>{{v.retour | date:('hh:mm a')}}</h4>
+                                                <h6 class="mb-0 fw-normal">{{v.retour | date: 'EEEE,MMM d, y'}}</h6>
+                                                <p class="mb-0">{{v.volFrom}}</p>
+
+
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <!-- Ticket detail END -->
+                                    </div>
+                                    <!-- Ticket END -->
+    
+                                    <!-- Price START -->
+                                    <div class="col-md-3 text-md-end">
+                                        <!-- Price -->
+                                        <h4>{{v.montant}} DT</h4>
+                                        <a routerLink="/reserve/{{v.idVol}}" class="btn btn-dark mb-0 mb-sm-2">Book Now</a>
+                                     
+                                       
+                                        <a class="btn btn-link text-decoration-underline p-0 mb-0" routerLink="/voldetails/{{v.idVol}}">
+                                           <i class="fa-solid fa-plane-circle-exclamation"></i> Vol Details
+                                        </a>
+                                    </div>
+                                    <!-- Price END -->
+                                </div>	<!-- Row END -->
+                            </div>  
+                            <!-- Card body END -->
+    
+                            <!-- Card footer -->
+                            <div class="card-footer pt-4">
+                                <div class="">
+                                    <ul class="list-inline bg-light d-sm-flex text-center justify-content-sm-between rounded-2 py-2 px-4 mb-0">
+                                        <label  *ngIf="v.nbr==0">
+                                        <li class="list-inline-item text-success" >Only {{v.nbp - v.nbr}} Seat Left</li>
+                                        </label>
+                                        <label  *ngIf="v.nbr!=0">
+                                        <li class="list-inline-item text-info" >Only {{v.nbr}} Seat Left</li>
+                                        </label>
+                                        <label  *ngIf="v.nbr!=0">
+                                        <li class="list-inline-item text-danger" *ngIf="v.nbr<=20 and v.nbr>=1 ">Only {{v.nbr}} Seat Left</li>
+                                        </label>
+
+                                        <li class="list-inline-item" *ngIf="v.retour">Total Days: {{calculateDiff(v.dep,v.retourhome)}} Days</li>
+                                        <li class="list-inline-item" *ngIf="!v.retour">Total Days: {{calculateDiff(v.dep,v.fin)}} Days</li>
+
+                                        <li class="list-inline-item text-success" *ngIf="v.refundable == 1">Refundable</li>
+                                        <li class="list-inline-item text-danger" *ngIf="v.refundable == 0">Not Refundable</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ticket item END -->
+    
+                        <!-- Pagination START -->
+                        <nav class="d-flex justify-content-center" aria-label="navigation">
+                            <ul class="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                                <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fa-solid fa-angle-left"></i></a></li>
+                                <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
+                                <li class="page-item mb-0"><a class="page-link" href="#">6</a></li>
+                                <li class="page-item mb-0"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+                            </ul>
+                        </nav>
+                        <!-- Pagination END -->
+    
+                    </div>
+                </div>
+                <!-- Main content END -->
+            </div> <!-- Row END -->
+        </div>
+    </section>
+    <!-- =======================
+    Flight list END -->
+        <style>
+            .range_container {
+                display: flex;
+                flex-direction: column;
+                width: 50% auto;
+                margin: 35% auto;
+            }
+        
+            .sliders_control {
+                position: relative;
+                min-height: 50px;
+            }
+        
+            .form_control {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                font-size: 24px;
+                color: #000000;
+            }
+        
+            input[type=range]::-webkit-slider-thumb {
+                appearance: none;
+                pointer-events: all;
+                width: 24px;
+                height: 24px;
+                background-color: rgb(255, 0, 0);
+                border-radius: 50%;
+                box-shadow: 0 0 0 1px #030000;
+                cursor: pointer;
+            }
+        
+            input[type=range]::-moz-range-thumb {
+                appearance: none;
+                pointer-events: all;
+                width: 24px;
+                height: 24px;
+                background-color: rgb(156, 7, 7);
+                border-radius: 50%;
+                box-shadow: 0 0 0 1px #a80404;
+                cursor: pointer;
+            }
+        
+            input[type=range]::-webkit-slider-thumb:hover {
+                background: #0842e2;
+            }
+        
+            input[type=range]::-webkit-slider-thumb:active {
+                box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
+                -webkit-box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
+            }
+        
+            input[type="number"] {
+                color: #d40000;
+                width: 50px;
+                height: 30px;
+                font-size: 20px;
+                border: none;
+            }
+        
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                opacity: 1;
+            }
+        
+            input[type="range"] {
+                -webkit-appearance: none;
+                appearance: none;
+                height: 2px;
+                width: 80%;
+                position: absolute;
+                background-color: #C6C6C6;
+                pointer-events: none;
+            }
+        
+            #fromSlider {
+                height: 0;
+                z-index: 1;
+            }
+        </style>
+    </main>
+    <!-- **************** MAIN CONTENT END **************** -->

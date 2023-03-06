@@ -1,0 +1,34 @@
+<app-admin-menu></app-admin-menu>
+<div class="page-content">
+<main>
+
+   
+    <section class="pt-0 mt-5">
+        <div class="container">
+            <table class="table">
+                <tr>
+                <th>Tour name</th>
+                <th>tour days</th>
+                
+                <th>btn</th>
+            </tr>
+            <tr *ngFor="let t of tours">
+               <td >
+                {{t.tourname}}
+               </td> 
+               <td >
+                {{t.tourdays}}
+               </td> 
+              
+               <td>
+                
+                <a  class="btn btn-success" [routerLink]="['/addActivitytoTour',t.idTour]">Add activity</a>
+          
+               </td>
+            </tr>
+            </table>
+        </div>
+    </section>
+        </main>
+</div>
+      
